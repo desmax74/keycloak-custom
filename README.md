@@ -2,7 +2,7 @@
 
 You can build a gear using this cartridge with the following command:
 
-	rhc app create keycloak http://cartreflect-claytondev.rhcloud.com/github/keycloak/openshift-keycloak-cartridge
+	rhc app create keycloakCustom https://raw.githubusercontent.com/desmax74/keycloak-custom-cartridge/master/manifest.yml
 	
 It will take a few minutes to build, so be patient.
 

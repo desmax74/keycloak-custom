@@ -23,6 +23,10 @@
     IDToken idToken = KeycloakService.getIDToken(request); 
  
 %>
+<%= request.getHeaderNames()%>
+<%= idToken %>
+<%= idToken.getName() %>
+<%= idToken.getNickName() %>
 <body>
 <div id='dsgapi-header'>
   <a id="home" href="/dsgapi">Home</a>

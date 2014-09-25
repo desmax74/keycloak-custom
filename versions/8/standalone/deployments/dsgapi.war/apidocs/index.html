@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<head>
+ <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<title>
+	
+</title>
+
+<!--
+<link href="css/bootstrap.css" rel="stylesheet">
+-->
+<link href="css/api.css" rel="stylesheet">
+<link href="css/assets.css" rel="stylesheet">
+</head>
+
+<body>  
+  <div id='dsgapi-header'>
+    <p>Dell Software API Documentation</p>
+  </div>
+
+  <nav id='sidebar'>
+	<h1><a href="/dsgapi">Home</a></h1>
+<ul id='links'>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+  
+  <li><h2>foglight</h2>
+    <ul>
+    
+              
+        <li class=''><a href='#'></a></li>
+      
+    
+              
+        <li class='GET'><a href='#/Get-Scale-Metric'>Get Application Metrics</a></li>
+      
+    
+    </ul>
+  </li>
+
+  <li><h2>marketplace</h2>
+    <ul>
+    
+              
+        <li class=''><a href='#'></a></li>
+      
+    
+              
+        <li class='GET'><a href='#/Get-cloudProviders'>Get Cloud Providers</a></li>
+              
+        <li class='POST'><a href='#/Post-isvBlueprint'>Add ISV Blueprint</a></li>
+              
+        <li class='PUT'><a href='#/Put-isvBlueprint'>Update ISV Blueprint</a></li>
+              
+        <li class='DELETE'><a href='#/Delete-IsvBlueprint'>Delete ISV Blueprint</a></li>
+      
+    
+    </ul>
+  </li>
+
+  <li><h2>api overview</h2>
+    <ul>
+    
+              
+        <li class=''><a href='#'></a></li>
+      
+    
+              
+        <li class=''><a href='#/authentication'>Authentication</a></li>
+              
+        <li class=''><a href='#/response-status-codes'>Response status codes</a></li>
+      
+    
+    </ul>
+  </li>
+
+</ul>
+</nav>
+
+<section id='content'>
+
+  <article class=''>
+    <a name='/authentication' href='#/authentication'><h2>Authentication</h2></a>
+    <section class='body'>
+      <p>Dell Software Developers Platform use OAuth 2.0 for authorization. Follow the steps below to get authenticated.</p>
+
+<h3 id="get-an-api-account">1. Get an API Account</h3>
+
+<h3 id="request-access-token">2. Request Access Token</h3>
+
+<h3 id="make-the-call">3. Make the call</h3>
+
+    </section>
+  </article>
+
+  <article class=''>
+    <a name='/response-status-codes' href='#/response-status-codes'><h2>Response status codes</h2></a>
+    <section class='body'>
+      <h3 id="success">Success</h3>
+
+<p>Successes differ from errors in that their body may not be a simple response object with a code and a message. The headers however are consistent across all calls:</p>
+
+<ul>
+  <li><code>GET</code>, <code>PUT</code>, <code>DELETE</code> returns <code>200 OK</code> on success,</li>
+  <li><code>POST </code> returns 201 on success,</li>
+</ul>
+
+<p><code>Status: 200 OK</code></p>
+
+<h3 id="error">Error</h3>
+
+<p>Error responses are simply returning <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html">standard HTTP error codes</a> along with some additional information:</p>
+
+<ul>
+  <li>The error code is sent back as a status header,</li>
+  <li>The body includes an object describing both the code and message (for debugging and/or display purposes),</li>
+</ul>
+
+<p>For a call with an invalid authentication token for example:</p>
+
+<p><code>Status: 403 Access denied</code>
+<code>{
+    status: 403,
+    message: 'Access denied: you do not have permission to access the service'
+}</code></p>
+
+    </section>
+  </article>
+
+  <article class='GET'>
+    <a name='/Get-cloudProviders' href='#/Get-cloudProviders'><h2><code><b>GET</b> /cloudproviders</code> Get Cloud Providers</h2></a>
+    <section class='body'>
+      <p>Query all the cloud providers supported by the Dell Cloud Marketplace.</p>
+
+<h3 id="request">Request</h3>
+
+<h3 id="response">Response</h3>
+
+<p>Sends back a collection of things.</p>
+
+<p><code>Status: 200 OK</code>
+<code>{
+    {
+        id: thing_1,
+        name: 'My first thing'
+    },
+    {
+        id: thing_2,
+        name: 'My second thing'
+    }
+}</code></p>
+
+
+    </section>
+  </article>
+
+  <article class='POST'>
+    <a name='/Post-isvBlueprint' href='#/Post-isvBlueprint'><h2><code><b>POST</b> /isvblueprint</code> Add ISV Blueprint</h2></a>
+    <section class='body'>
+      <p>Enables authorized partners to post their blueprint to Dell Cloud Marketplace</p>
+
+<h3 id="request">Request</h3>
+
+<ul>
+  <li>The headers must include a <strong>valid authentication token</strong>.</li>
+  <li><strong>The body can’t be empty</strong> and must include at least the name attribute, a <code>string</code> that will be used as the name of the thing.</li>
+</ul>
+
+<p><code>Authentication: bearer TOKEN</code>
+<code>{
+    name: 'My new thing'
+}</code></p>
+
+<h3 id="response">Response</h3>
+
+<p><strong>If succeeds</strong>, returns the created thing.</p>
+
+<p><code>Status: 201 Created</code>
+<code>{
+    id: new_thing,
+    name: 'My new thing'
+}</code></p>
+
+    </section>
+  </article>
+
+  <article class='PUT'>
+    <a name='/Put-isvBlueprint' href='#/Put-isvBlueprint'><h2><code><b>PUT</b> /isvblueprint/:id</code> Update ISV Blueprint</h2></a>
+    <section class='body'>
+      <p>Enables authorized partners to update their blueprint from Dell Cloud Marketplace</p>
+
+<h3 id="request">Request</h3>
+
+<ul>
+  <li><strong><code>:id</code></strong> is the id of the blueprint to update.</li>
+  <li>The headers must include a <strong>valid authentication token</strong>.</li>
+  <li><strong>The body can’t be empty</strong> and must include at least the name attribute, a <code>string</code> that will be used as the name of the thing.</li>
+</ul>
+
+<p><code>Authentication: bearer f862f658-ad89-4fcb-995b-7a4c50554ff6</code>
+<code>{
+    name: 'My new thing'
+}</code></p>
+
+<h3 id="response">Response</h3>
+
+<p>Sends back a collection of things.</p>
+
+<p><code>Status: 200 OK</code>
+<code>{
+    {
+        id: thing_1,
+        name: 'My first thing'
+    },
+    {
+        id: thing_2,
+        name: 'My second thing'
+    }
+}</code></p>
+
+    </section>
+  </article>
+
+  <article class='DELETE'>
+    <a name='/Delete-IsvBlueprint' href='#/Delete-IsvBlueprint'><h2><code><b>DELETE</b> /isvblueprint/:id</code> Delete ISV Blueprint</h2></a>
+    <section class='body'>
+      <p>Enables authorized partners to delete their blueprint from Dell Cloud Marketplace. </p>
+
+<h3 id="request">Request</h3>
+
+<ul>
+  <li><strong><code>:id</code></strong> is the id of the blueprint to delete.</li>
+  <li>The headers must include a <strong>valid authentication token</strong>.</li>
+  <li><strong>The body is omitted</strong>.</li>
+</ul>
+
+<h3 id="response">Response</h3>
+
+<p>Sends back a collection of things.</p>
+
+<p><code>Status: 200 Deleted</code>
+<code>{
+    code: 200,
+    message: 'Your blueprint (id:123) was deleted'
+}</code></p>
+
+    </section>
+  </article>
+
+  <article class='GET'>
+    <a name='/Get-Scale-Metric' href='#/Get-Scale-Metric'><h2><code><b>GET</b> /applications/:name</code> Get Application Metrics</h2></a>
+    <section class='body'>
+      <p>Get application metrics</p>
+
+<h3 id="request">Request</h3>
+
+<ul>
+  <li><strong><code>:name</code></strong> is the name of the application</li>
+  <li>The headers must include a <strong>valid authentication token</strong>.</li>
+</ul>
+
+<p><code>Authentication: bearer f862f658-ad89-4fcb-995b-7a4c50554ff6</code>
+<code>{
+    name: 'My new thing'
+}</code></p>
+
+<h3 id="response">Response</h3>
+
+<p>Sends back the application metrics</p>
+
+<p><code>Status: 200 OK</code>
+<code>{
+    {
+        id: thing_1,
+        name: 'My first thing'
+    },
+    {
+        id: thing_2,
+        name: 'My second thing'
+    }
+}</code></p>
+
+
+    </section>
+  </article>
+
+</section>
+
+  
+  <!--[if lt IE 9]><script src='http://html5shim.googlecode.com/svn/trunk/html5.js'></script><![endif]-->
+  <script src='assets.js' type='text/javascript'></script>
+  <script>require('boot');</script>
+</body>
+</html>

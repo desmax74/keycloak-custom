@@ -1,0 +1,33 @@
+#dsgapi-header {
+  background-color: #26343f;
+  padding: 14px;
+}
+
+#dsgapi-header a#logo {
+  font-size: 1.5em;
+  font-weight: bold;
+  text-decoration: none;
+  background: transparent url(../images/favicon32.png) no-repeat left center;
+  padding: 20px 0 20px 40px;
+  color: white;
+}
+
+#dsgapi-header p{
+  font-size: 1.5em;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  color: white;
+}
+
+#dsgapi-header a#home {
+  text-decoration: none;
+  padding: 20px 0 20px 40px;
+  color: white;
+}
+
+#dsgapi-container {
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-top: 15px;
+}

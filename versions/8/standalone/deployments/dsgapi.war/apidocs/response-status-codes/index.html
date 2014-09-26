@@ -1,27 +1,15 @@
 <h3 id="success">Success</h3>
 
-<p>Successes differ from errors in that their body may not be a simple response object with a code and a message. The headers however are consistent across all calls:</p>
+<p>Standard HTTP response codes are returned by the server indicating the outcome of the request. Please consult each REST service for their specific return code.</p>
 
-<ul>
-  <li><code>GET</code>, <code>PUT</code>, <code>DELETE</code> returns <code>200 OK</code> on success,</li>
-  <li><code>POST </code> returns 201 on success,</li>
-</ul>
+<p>Here are the status codes most commonly used by our REST services:</p>
 
-<p><code>Status: 200 OK</code></p>
-
-<h3 id="error">Error</h3>
-
-<p>Error responses are simply returning <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html">standard HTTP error codes</a> along with some additional information:</p>
-
-<ul>
-  <li>The error code is sent back as a status header,</li>
-  <li>The body includes an object describing both the code and message (for debugging and/or display purposes),</li>
-</ul>
-
-<p>For a call with an invalid authentication token for example:</p>
-
-<p><code>Status: 403 Access denied</code>
-<code>{
-    status: 403,
-    message: 'Access denied: you do not have permission to access the service'
-}</code></p>
+<p><code>200 Request succeeded
+202 Your request to a POST or PUT was successful.
+403 Access denied. This means you do not have the right permission 
+    to invoke the service.
+404 The resource was not found, this could be because there are errors 
+    in the request parameters.
+405 Usually this means you used the wrong HTTP method (e.g. GET instead 
+    of POST).
+</code></p>

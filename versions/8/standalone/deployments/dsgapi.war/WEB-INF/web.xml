@@ -16,15 +16,13 @@
     <listener>
         <listener-class>com.dell.listener.UserPropertiesListener</listener-class>
     </listener>
-
-
 	
 		
 	<!--  This is needed for Swagger to find the Rest APIs --> 	
 	 
 	<context-param>
 		<param-name>javax.ws.rs.Application</param-name>
-		<param-value>com.dell.marketplace.api.APIRestApplication</param-value>
+		<param-value>com.dell.api.common.APIRestApplication</param-value>
 	</context-param>
 	
 	<context-param>
@@ -52,7 +50,8 @@
 		<url-pattern>/cloudproviders/*</url-pattern>
 		<url-pattern>/blueprints/*</url-pattern>
 		<url-pattern>/isvblueprint/*</url-pattern>
-	
+		<url-pattern>/locations/*</url-pattern>
+		<url-pattern>/sms/*</url-pattern>
 	</servlet-mapping>
 	
   
@@ -124,6 +123,16 @@
 		<web-resource-collection>
 			<web-resource-name>Developers</web-resource-name>
 			<url-pattern>/blueprints/*</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>user</role-name>
+		</auth-constraint>
+	</security-constraint>
+	
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>Developers</web-resource-name>
+			<url-pattern>/sms/*</url-pattern>
 		</web-resource-collection>
 		<auth-constraint>
 			<role-name>user</role-name>

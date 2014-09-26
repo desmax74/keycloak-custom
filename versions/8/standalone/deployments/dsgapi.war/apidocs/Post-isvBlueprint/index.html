@@ -1,23 +1,24 @@
-<p>Enables authorized partners to post their blueprint to Dell Cloud Marketplace</p>
+<p>Enables authorized partners to post their blueprints to Dell Cloud Marketplace. You must 
+<a href="/dsgapi/partner/partner.html">contact Dell Software</a> and sign an agreement before you can 
+post your blueprints.</p>
 
 <h3 id="request">Request</h3>
 
-<ul>
-  <li>The headers must include a <strong>valid authentication token</strong>.</li>
-  <li><strong>The body can’t be empty</strong> and must include at least the name attribute, a <code>string</code> that will be used as the name of the thing.</li>
-</ul>
+<p>You must use a valid access token with <strong>extended rights</strong> to make this authenticated call.</p>
 
-<p><code>Authentication: bearer TOKEN</code>
-<code>{
-    name: 'My new thing'
-}</code></p>
+<p><strong>Parameters:</strong> </p>
+
+<p><code>{
+  "name": "",
+  "id": 0
+}
+</code></p>
 
 <h3 id="response">Response</h3>
 
-<p><strong>If succeeds</strong>, returns the created thing.</p>
+<p>If succeeds, the blueprint will be added to Dell Cloud Marketplace.</p>
 
-<p><code>Status: 201 Created</code>
-<code>{
-    id: new_thing,
-    name: 'My new thing'
-}</code></p>
+<p><code>Status: 
+  200 Blueprint created successfully.
+  403 Only authorized Dell partners can add a new blueprint.
+</code></p>

@@ -2,18 +2,14 @@
 
 <h3 id="request">Request</h3>
 
-<ul>
-  <li><strong><code>:id</code></strong> is the id of the blueprint to delete.</li>
-  <li>The headers must include a <strong>valid authentication token</strong>.</li>
-  <li><strong>The body is omitted</strong>.</li>
-</ul>
+<p>You must use a valid access token with <strong>extended rights</strong> to make this authenticated call.</p>
 
 <h3 id="response">Response</h3>
 
-<p>Sends back a collection of things.</p>
+<p>If succeeds, the blueprint will be deleted.</p>
 
-<p><code>Status: 200 Deleted</code>
-<code>{
-    code: 200,
-    message: 'Your blueprint (id:123) was deleted'
-}</code></p>
+<p><code>Status: 
+  200 Blueprint deleted successfully.
+  204 Blueprint does not exist.
+  403 Only authorized Dell partners can delete there existing blueprint.
+</code></p>

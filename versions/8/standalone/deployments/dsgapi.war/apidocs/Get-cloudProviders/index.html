@@ -1,20 +1,23 @@
-<p>Query all the cloud providers supported by the Dell Cloud Marketplace.</p>
-
-<h3 id="request">Request</h3>
+<p>Query all the cloud providers supported by the Dell Cloud Marketplace. This call does not require any authentication.</p>
 
 <h3 id="response">Response</h3>
 
-<p>Sends back a collection of things.</p>
-
-<p><code>Status: 200 OK</code>
-<code>{
-    {
-        id: thing_1,
-        name: 'My first thing'
-    },
-    {
-        id: thing_2,
-        name: 'My second thing'
-    }
-}</code></p>
+<p><code>[
+  {
+    "name": "AWS",
+    "id": 1
+  },
+  {
+    "name": "Google",
+    "id": 2
+  },
+  {
+    "name": "Azure",
+    "id": 3
+  },
+  {
+    "name": "Joyent",
+    "id": 4
+  }
+]</code></p>
 

@@ -1,7 +1,17 @@
-<p>Dell Software Developers Platform use OAuth 2.0 for authorization. Follow the steps below to get authenticated.</p>
+<p>Dell Software Developers Platform use OAuth 2.0 for authorization. Follow the steps below to get authorized.</p>
 
 <h3 id="get-an-api-account">1. Get an API Account</h3>
+<p><a href="/dsgapi/users/view.jsp">Register</a> for your Dell Software Developers account.</p>
 
 <h3 id="request-access-token">2. Request Access Token</h3>
+<p>Access token is unique to a user and their role. Some services requires OAuth2 authentication, in these cases, the headers must include a valid authentication token.</p>
+
+<p><code>Example HTTP headers:
+  Accept: application/json
+  Authorization: Bearer {access token}
+</code></p>
 
 <h3 id="make-the-call">3. Make the call</h3>
+<p>Once you have successfully obtained an access token, you can start making authenticated API requests.</p>
+
+<p>See <a href="/dsgapi/apidocs/examples/oauth2.html">examples</a> for more information.</p>

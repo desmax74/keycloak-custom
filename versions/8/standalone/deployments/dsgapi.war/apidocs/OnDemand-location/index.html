@@ -1,0 +1,26 @@
+<p>Get location service. This call does not require any authentication.</p>
+
+<h3 id="request">Request</h3>
+
+<ul>
+  <li><strong><code>ipaddress</code></strong> The IP address (e.g. 13.144.12.5).</li>
+</ul>
+
+<h3 id="response">Response</h3>
+
+<p>Return the geo information of the specified IP.</p>
+
+<p><code>Status: 
+  200 OK
+  204 IP Address not found
+</code></p>
+
+<p><code>{
+  "postalCode": "06850",
+  "country": "United States",
+  "city": "Norwalk",
+  "countryCode": "US",
+  "latitude": 41.1271,
+  "longitude": -73.4416,
+  "paymentCurrency": "USD"
+}</code></p>

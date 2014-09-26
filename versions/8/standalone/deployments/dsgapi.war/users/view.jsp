@@ -32,7 +32,7 @@
 <div id="dsgapi-container">
 
 <p>        
-<b>Hello <%=idToken.getGivenName()%><%= idToken.getPreferredUsername() %><</b>
+<b>Hello <%= idToken.getPreferredUsername() %></b>
 </p>
 
 <p>

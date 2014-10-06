@@ -158,7 +158,7 @@
                         <password>sa</password>
                     </security>
                 </datasource>
-                <datasource jta="false" jndi-name="java:jboss/datasources/DsgApiDS" pool-name="DsgApiDS" enabled="true" use-ccm="false">
+                <!--<datasource jta="false" jndi-name="java:jboss/datasources/DsgApiDS" pool-name="DsgApiDS" enabled="true" use-ccm="false">
                     <connection-url>jdbc:mysql://localhost:3306/apikeycloak</connection-url>
                     <driver-class>com.mysql.jdbc.Driver</driver-class>
                     <driver>mysql-connector-java-5.1.30-bin.jar_com.mysql.jdbc.Driver_5_1</driver>
@@ -173,7 +173,7 @@
                     <statement>
                         <share-prepared-statements>false</share-prepared-statements>
                     </statement>
-                </datasource>
+                </datasource>-->
                 <drivers>
                     <driver name="h2" module="com.h2database.h2">
                         <xa-datasource-class>org.h2.jdbcx.JdbcDataSource</xa-datasource-class>

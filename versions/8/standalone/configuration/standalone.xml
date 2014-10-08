@@ -172,7 +172,7 @@
                         <flush-strategy>IdleConnections</flush-strategy>
                     </pool>
                 </datasource>
-                <datasource jndi-name="java:jboss/datasources/DsgApiDS" enabled="${mysql.enabled}" use-java-context="true" pool-name="DsgApiDS" use-ccm="true">
+                <datasource jndi-name="java:jboss/datasources/DsgApiDS" enabled="true" use-java-context="true" pool-name="DsgApiDS" use-ccm="true">
                     <connection-url>jdbc:mysql://${env.OPENSHIFT_MYSQL_DB_HOST}:${env.OPENSHIFT_MYSQL_DB_PORT}/apikeycloak</connection-url>
                     <driver>mysql</driver>
                     <security>

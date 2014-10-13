@@ -76,14 +76,14 @@
     	<load-on-startup>2</load-on-startup>
   	</servlet>
   	
-  	<!--  -->
+  	<!-- Add User Servlet -->
   	<servlet>
-		<servlet-name>ApiServlet</servlet-name>
-		<servlet-class>com.dell.api.web.ApiServlet</servlet-class>
+		<servlet-name>AddUserServlet</servlet-name>
+		<servlet-class>com.dell.api.web.AddUserServlet</servlet-class>
   	</servlet>
   	
   	<servlet-mapping>
-		<servlet-name>ApiServlet</servlet-name>
+		<servlet-name>AddUserServlet</servlet-name>
 		<url-pattern>/partner/addpartner</url-pattern>
 	</servlet-mapping>
 	
@@ -108,7 +108,18 @@
 		<servlet-name>LogoutServlet</servlet-name>
 		<url-pattern>/logout</url-pattern>
 	</servlet-mapping>
+
+	<!--  CORS filter -->
+	<filter>
+  		<filter-name>CorsFilter</filter-name>
+  		<filter-class>com.dell.api.web.CorsFilter</filter-class>
+	</filter>
+	<filter-mapping>
+  		<filter-name>CorsFilter</filter-name>
+  		<url-pattern>/*</url-pattern>
+	</filter-mapping>
 	
+		<!--  Security Rules for the different Rest Services -->
     <security-constraint>
         <web-resource-collection>
             <web-resource-name>Users</web-resource-name>

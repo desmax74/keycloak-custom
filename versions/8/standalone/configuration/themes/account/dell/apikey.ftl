@@ -19,7 +19,7 @@
             </div>
 
             <div class="col-sm-10 col-md-10">
-                <input type="text" class="form-control" id="apikey" name="apikey" disabled="disabled" value="${apikey.key!''}">
+                <input type="text" class="form-control" id="apikey" name="apikey" readonly value="${apikey.key!''}">
             </div>
         </div>
 

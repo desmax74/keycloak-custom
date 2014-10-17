@@ -16,6 +16,9 @@
     <listener>
         <listener-class>com.dell.listener.UserPropertiesListener</listener-class>
     </listener>
+    <listener>
+        <listener-class>com.dell.listener.SessionEventListener</listener-class>
+    </listener>
 	
 		
 	<!--  This is needed for Swagger to find the Rest APIs --> 	

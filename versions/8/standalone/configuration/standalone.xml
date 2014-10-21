@@ -562,8 +562,8 @@
                 <http-listener name="default" socket-binding="http"/>
                 <host name="default-host" alias="localhost">
                     <location name="/" handler="welcome-content"/>
-                    <filter-ref name="server-header"/>
-                    <filter-ref name="x-powered-by-header"/>
+                    <!--<filter-ref name="server-header"/>
+                    <filter-ref name="x-powered-by-header"/>-->
                 </host>
             </server>
             <servlet-container name="default">
@@ -572,10 +572,10 @@
             <handlers>
                 <file name="welcome-content" path="${jboss.home.dir}/welcome-content"/>
             </handlers>
-            <filters>
+            <!--<filters>
                 <response-header name="server-header" header-name="Server" header-value="WildFly/8"/>
                 <response-header name="x-powered-by-header" header-name="X-Powered-By" header-value="Undertow/1"/>
-            </filters>
+            </filters>-->
         </subsystem>
         <subsystem xmlns="urn:jboss:domain:webservices:1.2">
             <wsdl-host>${jboss.bind.address:127.0.0.1}</wsdl-host>

@@ -55,6 +55,7 @@
 		<url-pattern>/isvblueprint/*</url-pattern>
 		<url-pattern>/locations/*</url-pattern>
 		<url-pattern>/sms/*</url-pattern>
+		<url-pattern>/dcm/*</url-pattern>
 	</servlet-mapping>
 	
   

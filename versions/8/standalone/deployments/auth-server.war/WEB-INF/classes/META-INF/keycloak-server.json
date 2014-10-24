@@ -6,6 +6,7 @@
     "eventsStore": {
         "provider": "jpa",
         "jpa": {
+            "include-events": ["LOGIN", "LOGOUT"],
             "exclude-events": [ "REFRESH_TOKEN" ]
         }
     },

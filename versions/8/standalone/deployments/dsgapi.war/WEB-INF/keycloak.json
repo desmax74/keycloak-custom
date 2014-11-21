@@ -1,8 +1,0 @@
-{
-  "realm": "DSG_API",
-  "realm-public-key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCPLdrgtzHdWEyc9EQYzg3jYfIRv5sFuKvV9ol9sTFa8ijftLC4pk50VL8I+jBQfIM0FBCNNV0gUKQJ0sVXUrv77BsAPyKW2DnLRjsfrwnoPjjwiDY8qXgPgC8wrWCppHDzOJvfn+FLfjPPDf1RLMORBBxslqggkhiAetMiN8D/eQIDAQAB",
-  "auth-server-url": "/auth",
-  "ssl-required": "none",
-  "resource": "dsgapi",
-  "public-client": true
-}

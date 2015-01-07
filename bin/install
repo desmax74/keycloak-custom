@@ -45,6 +45,8 @@ client_result ""
 touch ${OPENSHIFT_WILDFLY_DIR}/env/OPENSHIFT_WILDFLY_CLUSTER
 #touch ${OPENSHIFT_WILDFLY_DIR}/env/OPENSHIFT_JBOSSAS_CLUSTER_REMOTING
 
+export PATH=/usr/lib/jvm/jdk1.8.0_25/bin:$PATH
+export JAVA_HOME=/usr/lib/jvm/jdk1.8.0_25/
 # Install Oracle JDK 8 (this should be removed once OpenShift provides support for JDK 8)
 #pushd $OPENSHIFT_WILDFLY_DIR/usr/lib/jvm > /dev/null
 #    if wget https://s3-eu-west-1.amazonaws.com/jdks/jdk-8u25-linux-i586.tar.gz  > /dev/null; then

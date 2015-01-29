@@ -198,11 +198,11 @@
             </pools>
             <caches>
                 <cache name="simple"/>
-                <cache name="distributable" aliases="passivating clustered" passivation-store-ref="infinispan"/>
+                <!--<cache name="distributable" aliases="passivating clustered" passivation-store-ref="infinispan"/>-->
             </caches>
-            <passivation-stores>
+            <!--<passivation-stores>
                 <passivation-store name="infinispan" cache-container="ejb" max-size="10000"/>
-            </passivation-stores>
+            </passivation-stores>-->
             <async thread-pool-name="default"/>
             <timer-service thread-pool-name="default" default-data-store="default-file-store">
                 <data-stores>
